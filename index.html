@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="utf-8">
+      <title>CIS197 Final Project</title>
+      <script src="js/lib/jquery-1.11.3.min.js"></script>
+      <script src="js/lib/jquery-ui.min.js"></script>
+      <script src="js/lib/underscore-min.js" type="text/javascript" charset="utf-8"></script>
+      <script src="js/lib/backbone-min.js" type="text/javascript" charset="utf-8"></script>
+      <script src='js/lib/moment.min.js'></script>
+      <script src="http://cdnjs.cloudflare.com/ajax/libs/backbone-localstorage.js/1.0/backbone.localStorage-min.js" type="text/javascript"></script>
+      <script src="js/lib/handlebars.js" type="text/javascript" charset="utf-8"></script>
+      <script src="js/lib/socket.io.js" type="text/javascript" charset="utf-8"></script>
+      <script src="js/lib/bootstrap.min.js"></script>
+      <script src='js/lib/fullcalendar.min.js'></script>
+      <link rel="stylesheet" href="css/fullcalendar.css">
+      <link rel="stylesheet" href="css/jquery-ui.min.css">
+      <link rel="stylesheet" href="css/bootstrap.min.css">
+      <link rel="stylesheet" href="css/style.css">
+      <div class = "row-fluid">
+        <div class="navbar navbar-default navbar-fixed-top">
+          <div id="container">
+            <a class="navbar-brand">CIS-197 Task Manager</a>
+            <div id="navar" class="collapse navbar-collapse">
+            </div>
+          </div>
+        </div>
+      </div>
+    </head>
+
+    <body>
+      <div class = "container-fluid">
+
+      </div>
+
+      <div class="container-fluid">
+        <div class="row-fluid">
+          <div class="col-md-4">
+            <div class = "row-fluid">
+              <div class="page-header">
+              <h3>Calendar</h3>
+            </div>
+            </div>
+            <div class = "row-fluid">
+              <div id="calendar"></div>
+              <!-- insert clickable calendar -->
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-8">
+
+
+        <div class="row-fluid">
+          <div class="col-md-12">
+                <div class="page-header">
+                    <h3 id="project-title">Tasks</h3>
+                </div>
+          </div>
+        </div>
+
+        <div class="row-fluid">
+          <div class="col-md-12">
+
+            <div class="col-md-4">
+              <div class="panel panel-primary">
+                <div class="panel-heading">
+                  <h3 class="panel-title">Tasks</h3>
+                </div>
+                <div class="panel-body">
+                  <!-- to Where the tasks UI appends-->
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="panel panel-danger">
+                <div class="panel-heading">
+                  <h3 class="panel-title">Doing</h3>
+                </div>
+                <div class="panel-body">
+                  <ul id = "sortable-doing">
+                    <!-- tasks can be dragged here! -->
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="panel panel-success">
+                <div class="panel-heading">
+                  <h3 class="panel-title">Done</h3>
+                </div>
+                <div class="panel-body">
+                  <ul id = "sortable-done">
+                    <!-- tasks can be dragged here! -->
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+      </div>
+      </div>
+
+      <script id="task-template" type="text/x-handlebars-template">
+        <label>{{task}}</label>
+        <button type="button" class="delete_button" style="float: right;">
+           <span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span>
+        </button>
+        <input class="edit" type="text" value="{{task}}" />
+      </script>
+
+      <script id="task-list-template" type="text/x-handlebars-template">
+        <input id="add_task" type="text" name="task" placeholder="Add New Task Here" />
+        <ul id = "sortable-tasks">
+        </ul>
+      </script>
+      <script src="js/models/TaskModel.js" type="text/javascript" charset="utr-8"></script>
+      <script src="js/collections/TasksCollection.js" type="text/javascript" charset="utf-8"></script>
+      <script src="js/views/TaskView.js" type="text/javascript" charset="utf-8"></script>
+      <script src="js/views/TaskListView.js" type="text/javascript" charset="utf-8"></script>
+      <script src="js/init.js" type="text/javascript" charset="utf-8"></script>
+      <script>
+        $( document ).ready(function() {
+          $( "#sortable-tasks, #sortable-doing, #sortable-done").sortable({
+            connectWith: "#sortable-tasks, #sortable-doing, #sortable-done, .list",
+            dropOnEmpty: true
+          });
+          $( "#sortable-tasks, #sortable-doing, #sortable-done").sortable("refresh");
+
+          $('#calendar').fullCalendar({
+              dayClick: function(date, jsEvent, view) {
+
+              alert('Clicked on: ' + date.format());
+
+            }
+          });
+        });
+      </script>
+    </body>
+</html>

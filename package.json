@@ -1,0 +1,20 @@
+{
+  "name": "javascript_project",
+  "version": "0.0.0",
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "devDependencies": {
+    "chai": "^3.2.0",
+    "grunt": "^0.4.5",
+    "grunt-eslint": "^17.2.0",
+    "gulp": "^3.9.0",
+    "gulp-eslint": "^2.0.0",
+    "gulp-zip": "^3.0.2",
+    "proxyquire": "^1.7.1",
+    "sinon": "^1.16.1"
+  },
+  "main": "app.js",
+  "license": "ISC",
+  "description": ""
+}

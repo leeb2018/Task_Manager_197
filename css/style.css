@@ -1,0 +1,70 @@
+body {
+  padding-top: 30px;
+}
+ol, #new_task {
+  border-style: solid;
+  border-width: thin;
+  border-color: #8c8c8c;
+  padding-left: 5%;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  font-size: 15px;
+  border-radius: 10px;
+}
+
+ul {
+  padding: 2px;
+}
+
+.panel .panel-body {
+  height: 100%;
+}
+
+.panel-title {
+  font-size: 21px;
+}
+
+.done {
+  border-color: green;
+}
+
+.doing {
+  border-color: red;
+}
+
+.tasks {
+  border-color: blue;
+}
+
+.delete_button {
+  background-color: Transparent;
+  border: none;
+  outline:none;
+}
+
+#add_task {
+  border-radius: 0;
+  width: 100%;
+  padding-left: 3px;
+  padding-right: 3px;
+}
+
+.list label{
+  padding: 0;
+  margin: 0;
+}
+
+.list .editing .edit {
+  width: 85%;
+  border: none;
+}
+
+.list .editing label{
+  display: none;
+}
+
+ol .edit {
+  display: none;
+}
