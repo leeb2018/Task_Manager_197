@@ -6,6 +6,7 @@ ol, #new_task {
   border-width: thin;
   border-color: #8c8c8c;
   padding-left: 5%;
+  padding-right: 5%;
   margin-top: 5px;
   margin-bottom: 5px;
   padding-top: 4px;
@@ -38,10 +39,12 @@ ul {
   border-color: blue;
 }
 
-.delete_button {
+.delete_button, .edit_task {
+  display: none;
   background-color: Transparent;
   border: none;
   outline:none;
+  padding: 0;
 }
 
 #add_task {
@@ -54,17 +57,23 @@ ul {
 .list label{
   padding: 0;
   margin: 0;
+  word-wrap: break-word;
 }
 
-.list .editing .edit {
-  width: 85%;
+ol.editing label{
+  display: none;
+}
+
+ol.list .edit {
+  display: none;
+}
+
+ol.editing .edit {
+  display: block;
   border: none;
+  word-wrap: break-word;
 }
 
-.list .editing label{
-  display: none;
-}
-
-ol .edit {
-  display: none;
+.fc-state-highlight {
+  background-color: red;
 }
