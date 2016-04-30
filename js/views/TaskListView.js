@@ -38,7 +38,7 @@ $(function () {
 
       var startDate = curDate.getUTCFullYear() + "-" + month + "-" + date;
       var start = startDate;
-      var task = {title: newTask, start: start, end: start, color: "blue"};
+      var task = {title: newTask, start: start, end: start, color: "#1265a8"};
       var taskSource = { events: [task]};
 
       // create new model with relevant information
